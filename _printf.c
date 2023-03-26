@@ -1,14 +1,12 @@
 #include <stdarg.h>
 #include "main.h"
 #include <stdio.h>
-
 /**
   * _printf - produces output according to a format.
   * @format: a character string.
   * Return: number of characters printed(
   * excluding the null terminator)
   */
-
 int _printf(const char *format, ...)
 {
 	int count;
@@ -18,14 +16,11 @@ int _printf(const char *format, ...)
 
 	if (format == NULL)
 		return (0);
-
 	va_start(args, format);
 	for (count = 0; *(format + count) != '\0'; count++)
 	{
 		if (format[count] == '%')
-		{
 			flag = 1;
-		}
 		else if (flag == 1)
 		{
 			flag = 0;
